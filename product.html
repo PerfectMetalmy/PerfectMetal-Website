@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Perfect Metal Industries</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Perfect Metal Industries logo" />
+        <span class="brand-text">
+          PERFECT METAL INDUSTRIES (M) SDN. BHD.
+        </span>
+      </a>
+
+      <!-- Hamburger (always visible on mobile) -->
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <!-- Navigation -->
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="product.html">Products</a></li>
+          <li><a href="#industries">Industries We Serve</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a class="btn btn--small btn--outline" href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    navToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+    });
+  </script>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <!-- Replace this background image URL if you like -->
+      <div class="hero-bg" style="--hero:url('images/Landing.jpg');"></div>
+
+      <div class="container hero-inner-product">
+        <p class="eyebrow"><b>EVERY PERFECT METAL PRODUCT IS MADE WITH
+          <br>Quality • Precision • Durability</b>
+        </p>
+        <h1 class="hero-title">
+          <span class="sub"></span>
+          <span class="accent">PRODUCTS</span>
+        </h1>
+        <p class="quality"></p>
+      </div>
+    </section>
+
+<!-- FILTER BAR -->
+<section class="filter-bar">
+  <button data-filter="automotive" class="active">Automotive</button>
+  <button data-filter="furniture">Furniture</button>
+  <button data-filter="electrical">Electrical</button>
+  <button data-filter="all">All</button>
+</section>
+
+<div class="content-layout">
+    <!-- SIDEBAR FILTER -->
+
+      <aside class="sidebar">
+        <h3>Filter by Category</h3>
+        <div class="filter-group">
+          <button class="dropdown-toggle">Screws ▾</button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="machine-screw"> Machine Screws</label>
+            <label><input type="checkbox" value="tapping-screw"> Tapping Screws</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <button class="dropdown-toggle">Bolts ▾</button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="hex-bolt"> Hex Bolts</label>
+            <label><input type="checkbox" value="carriage-bolt"> Carriage Bolts</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <button class="dropdown-toggle">Nuts ▾</button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="hex-nut"> Hex Nuts</label>
+            <label><input type="checkbox" value="lock-nut"> Lock Nuts</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <button class="dropdown-toggle">Rivets ▾</button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="blind-rivet"> Blind Rivets</label>
+            <label><input type="checkbox" value="solid-rivet"> Solid Rivets</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <button class="dropdown-toggle">Washers ▾</button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="flat-washer"> Flat Washers</label>
+            <label><input type="checkbox" value="spring-washer"> Spring Washers</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <button class="dropdown-toggle">Other ▾</button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" value="pin"> Pins</label>
+            <label><input type="checkbox" value="anchor"> Anchors</label>
+          </div>
+        </div>
+      </aside>
+
+
+      <!-- PRODUCT GRID -->
+      <section class="product-grid">
+
+      <!-- Automotive -->
+      <div class="product automotive" data-category="machine-screw">
+        <img src="images/1000x1000/AS_1.jpg" alt="Automotive Machine Screw 1">
+        <p class="product-name">Automotive Machine Screw 1</p>
+      </div>
+
+      <div class="product automotive" data-category="machine-screw">
+        <img src="images/1000x1000/AS_2.jpg" alt="Automotive Machine Screw 2">
+        <p class="product-name">Automotive Machine Screw 2</p>
+      </div>
+
+      <div class="product automotive" data-category="tapping-screw">
+        <img src="images/1000x1000/AS_3.jpg" alt="Automotive Tapping Screw 3">
+        <p class="product-name">Automotive Tapping Screw 3</p>
+      </div>
+
+      <div class="product automotive" data-category="hex-bolt">
+        <img src="images/1000x1000/AS_4.jpg" alt="Automotive Hex Bolt 4">
+        <p class="product-name">Automotive Hex Bolt 4</p>
+      </div>
+
+      <div class="product automotive" data-category="carriage-bolt">
+        <img src="images/1000x1000/AS_5.jpg" alt="Automotive Carriage Bolt 5">
+        <p class="product-name">Automotive Carriage Bolt 5</p>
+      </div>
+
+      <div class="product automotive" data-category="hex-nut">
+        <img src="images/1000x1000/AS_6.jpg" alt="Automotive Hex Nut 6">
+        <p class="product-name">Automotive Hex Nut 6</p>
+      </div>
+
+      <div class="product automotive" data-category="lock-nut">
+        <img src="images/1000x1000/AS_7.jpg" alt="Automotive Lock Nut 7">
+        <p class="product-name">Automotive Lock Nut 7</p>
+      </div>
+
+      <div class="product automotive" data-category="blind-rivet">
+        <img src="images/1000x1000/AS_8.jpg" alt="Automotive Blind Rivet 8">
+        <p class="product-name">Automotive Blind Rivet 8</p>
+      </div>
+
+      <div class="product automotive" data-category="solid-rivet">
+        <img src="images/1000x1000/AS_9.jpg" alt="Automotive Solid Rivet 9">
+        <p class="product-name">Automotive Solid Rivet 9</p>
+      </div>
+
+      <div class="product automotive" data-category="flat-washer">
+        <img src="images/1000x1000/AS_10.jpg" alt="Automotive Flat Washer 10">
+        <p class="product-name">Automotive Flat Washer 10</p>
+      </div>
+
+      <div class="product automotive" data-category="spring-washer">
+        <img src="images/1000x1000/AS_11.jpg" alt="Automotive Spring Washer 11">
+        <p class="product-name">Automotive Spring Washer 11</p>
+      </div>
+
+      <div class="product automotive" data-category="pin">
+        <img src="images/1000x1000/AS_12.jpg" alt="Automotive Pin 12">
+        <p class="product-name">Automotive Pin 12</p>
+      </div>
+
+      <div class="product automotive" data-category="anchor">
+        <img src="images/1000x1000/AS_13.jpg" alt="Automotive Anchor 13">
+        <p class="product-name">Automotive Anchor 13</p>
+      </div>
+
+      <div class="product automotive" data-category="machine-screw">
+        <img src="images/1000x1000/AS_14.jpg" alt="Automotive Machine Screw 14">
+        <p class="product-name">Automotive Machine Screw 14</p>
+      </div>
+
+      <div class="product automotive" data-category="hex-bolt">
+        <img src="images/1000x1000/AS_15.jpg" alt="Automotive Hex Bolt 15">
+        <p class="product-name">Automotive Hex Bolt 15</p>
+      </div>
+
+      <div class="product automotive" data-category="lock-nut">
+        <img src="images/1000x1000/AS_16.jpg" alt="Automotive Lock Nut 16">
+        <p class="product-name">Automotive Lock Nut 16</p>
+      </div>
+
+      <div class="product automotive" data-category="blind-rivet">
+        <img src="images/1000x1000/AS_17.jpg" alt="Automotive Blind Rivet 17">
+        <p class="product-name">Automotive Blind Rivet 17</p>
+      </div>
+
+      <div class="product automotive" data-category="flat-washer">
+        <img src="images/1000x1000/AS_18.jpg" alt="Automotive Flat Washer 18">
+        <p class="product-name">Automotive Flat Washer 18</p>
+      </div>
+
+    
+      <!-- Furniture -->
+      <div class="product furniture" data-category="hex-bolt">
+        <img src="images/1000x1000/FS_1.jpg" alt="Furniture Hex Bolt 1">
+        <p class="product-name">Furniture Hex Bolt 1</p>
+      </div>
+
+      <div class="product furniture" data-category="carriage-bolt">
+        <img src="images/1000x1000/FS_2.jpg" alt="Furniture Carriage Bolt 2">
+        <p class="product-name">Furniture Carriage Bolt 2</p>
+      </div>
+
+      <div class="product furniture" data-category="flat-washer">
+        <img src="images/1000x1000/FS_3.jpg" alt="Furniture Flat Washer 3">
+        <p class="product-name">Furniture Flat Washer 3</p>
+      </div>
+
+      <div class="product furniture" data-category="spring-washer">
+        <img src="images/1000x1000/FS_4.jpg" alt="Furniture Spring Washer 4">
+        <p class="product-name">Furniture Spring Washer 4</p>
+      </div>
+
+      <div class="product furniture" data-category="hex-nut">
+        <img src="images/1000x1000/FS_5.jpg" alt="Furniture Hex Nut 5">
+        <p class="product-name">Furniture Hex Nut 5</p>
+      </div>
+
+      <div class="product furniture" data-category="lock-nut">
+        <img src="images/1000x1000/FS_6.jpg" alt="Furniture Lock Nut 6">
+        <p class="product-name">Furniture Lock Nut 6</p>
+      </div>
+
+      <div class="product furniture" data-category="blind-rivet">
+        <img src="images/1000x1000/FS_7.jpg" alt="Furniture Blind Rivet 7">
+        <p class="product-name">Furniture Blind Rivet 7</p>
+      </div>
+
+      <div class="product furniture" data-category="solid-rivet">
+        <img src="images/1000x1000/FS_8.jpg" alt="Furniture Solid Rivet 8">
+        <p class="product-name">Furniture Solid Rivet 8</p>
+      </div>
+
+      <div class="product furniture" data-category="pin">
+        <img src="images/1000x1000/FS_9.jpg" alt="Furniture Pin 9">
+        <p class="product-name">Furniture Pin 9</p>
+      </div>
+
+      <div class="product furniture" data-category="anchor">
+        <img src="images/1000x1000/FS_10.jpg" alt="Furniture Anchor 10">
+        <p class="product-name">Furniture Anchor 10</p>
+      </div>
+
+
+      <!-- Electrical -->
+      <div class="product electrical" data-category="machine-screw">
+        <img src="images/1000x1000/ES_1.jpg" alt="Electrical Machine Screw 1">
+        <p class="product-name">Electrical Machine Screw 1</p>
+      </div>
+
+      <div class="product electrical" data-category="tapping-screw">
+        <img src="images/1000x1000/ES_2.jpg" alt="Electrical Tapping Screw 2">
+        <p class="product-name">Electrical Tapping Screw 2</p>
+      </div>
+
+      <div class="product electrical" data-category="hex-bolt">
+        <img src="images/1000x1000/ES_3.jpg" alt="Electrical Hex Bolt 3">
+        <p class="product-name">Electrical Hex Bolt 3</p>
+      </div>
+
+      <div class="product electrical" data-category="carriage-bolt">
+        <img src="images/1000x1000/ES_4.jpg" alt="Electrical Carriage Bolt 4">
+        <p class="product-name">Electrical Carriage Bolt 4</p>
+      </div>
+
+      <div class="product electrical" data-category="hex-nut">
+        <img src="images/1000x1000/ES_5.jpg" alt="Electrical Hex Nut 5">
+        <p class="product-name">Electrical Hex Nut 5</p>
+      </div>
+
+      <div class="product electrical" data-category="lock-nut">
+        <img src="images/1000x1000/ES_6.jpg" alt="Electrical Lock Nut 6">
+        <p class="product-name">Electrical Lock Nut 6</p>
+      </div>
+
+      <div class="product electrical" data-category="blind-rivet">
+        <img src="images/1000x1000/ES_7.jpg" alt="Electrical Blind Rivet 7">
+        <p class="product-name">Electrical Blind Rivet 7</p>
+      </div>
+
+      <div class="product electrical" data-category="solid-rivet">
+        <img src="images/1000x1000/ES_8.jpg" alt="Electrical Solid Rivet 8">
+        <p class="product-name">Electrical Solid Rivet 8</p>
+      </div>
+
+      <div class="product electrical" data-category="flat-washer">
+        <img src="images/1000x1000/ES_9.jpg" alt="Electrical Flat Washer 9">
+        <p class="product-name">Electrical Flat Washer 9</p>
+      </div>
+
+      <div class="product electrical" data-category="spring-washer">
+        <img src="images/1000x1000/ES_10.jpg" alt="Electrical Spring Washer 10">
+        <p class="product-name">Electrical Spring Washer 10</p>
+      </div>
+    </section>
+</div>
+
+
+    <!-- ===== Contact / Get in touch ===== -->
+    <section class="contact" id="contact" aria-label="Get in touch">
+      <div class="container contact-grid">
+        <div class="contact-form">
+          <h2>Get in touch</h2>
+
+          <!-- Static form; add backend later if needed -->
+          <form action="https://formsubmit.co/qiqity@gmail.com" method="POST">
+            <div class="row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Full name" required>
+              </label>
+
+              <label>
+                <span>Contact number</span>
+                <input type="tel" name="phone" placeholder="+60…" required>
+              </label>
+
+              <label>
+                <span>Email address</span>
+                <input type="email" name="email" placeholder="you@company.com" required>
+              </label>
+
+              <label>
+                <span>Industry</span>
+                <input type="text" name="industry" placeholder="e.g. Automotive">
+              </label>
+
+              <label>
+                <span>Company name</span>
+                <input type="text" name="company" placeholder="Company Sdn. Bhd.">
+              </label>
+            </div>
+
+            <label class="full">
+              <span>Interested products</span>
+              <textarea name="message" rows="4" placeholder="Samples / specifications / attachments (paste links)"></textarea>
+            </label>
+
+            <!-- Formsubmit hidden fields -->
+            <input type="hidden" name="_captcha" value="false"> <!-- disables captcha -->
+            <input type="hidden" name="_template" value="table"> <!-- cleaner email format -->
+            <input type="hidden" name="_next" value="https://yourdomain.github.io/thank-you.html"> 
+
+            <button type="submit" class="btn btn--light">Submit</button>     
+          </form>
+        </div>
+
+        <aside class="contact-info">
+          <div class="info-block">
+          <h3>Where we are</h3>
+          <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/dir//Perfect+Metal+Industrial+(M)+Sdn+Bhd,+Balakong,+1,+Jalan+Taming+P%2F1,+Taman+Taming+Jaya,+43300+Seri+Kembangan,+Selangor/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x31cdcac8cdd270ef:0x287df40c2ed64a85?sa=X&ved=1t:57443&ictx=111" target="_blank">Balakong, 1, Jalan Taming P/1, Taman Taming Jaya, 43300 Seri Kembangan, Selangor</a></p>
+        </div>
+
+          <div class="info-block">
+          <h3>Reach us</h3>
+          <p><i class="fas fa-phone"></i> <a class="phone" href="tel:+6038961278">+60 3 8961 2787</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales.perfectm@gmail.com&su=SUBJECT&body=BODY&cc=sales.perfectm@gmail.com" target="_blank">sales.perfectm@gmail.com</a></p>
+        </div>
+
+          <div class="social">
+          <a href="https://www.facebook.com/p/Perfect-Metal-Industrial-100063540762149/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/126681709?text=I" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales.perfectm@gmail.com&su=SUBJECT&body=BODY&cc=sales.perfectm@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+        </div>
+        </aside>
+      </div>
+    </section>
+
+   <!-- ===== Footer ===== -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container">
+      <p>Copyright © 2025 Perfect Metal Industries (M) Sdn. Bhd. All Rights Reserved.</p>
+    </div>
+  </footer>
+<script>
+  const buttons = document.querySelectorAll('.filter-bar button');
+  const products = document.querySelectorAll('.product');
+
+  function showCategory(category) {
+    products.forEach(product => {
+      if (category === 'all' || product.classList.contains(category)) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    });
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[data-filter="${category}"]`).classList.add('active');
+  }
+
+  // Default: show Automotive only
+  showCategory('automotive');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      showCategory(button.getAttribute('data-filter'));
+    });
+  });
+</script>
+
+<script>
+  // Toggle dropdown
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('active');
+    });
+  });
+</script>
+
+
+<script>
+  let activeIndustry = "automotive"; // default
+
+  function applyFilters() {
+    const checkedCategories = Array.from(
+      document.querySelectorAll('.sidebar input[type="checkbox"]:checked')
+    ).map(cb => cb.value);
+
+    products.forEach(product => {
+      const inIndustry = activeIndustry === "all" || product.classList.contains(activeIndustry);
+      const inCategory = checkedCategories.length === 0 || checkedCategories.includes(product.dataset.category);
+
+      if (inIndustry && inCategory) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  }
+
+  // Override industry button logic
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      activeIndustry = button.getAttribute("data-filter");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+      applyFilters();
+    });
+  });
+
+  // Sidebar checkboxes
+  document.querySelectorAll('.sidebar input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener("change", applyFilters);
+  });
+
+  // Initial load
+  applyFilters();
+</script>
+</body>
+</html>
