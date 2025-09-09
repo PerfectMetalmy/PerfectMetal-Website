@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automotive Screws | Perfect Metal</title>
+  <link rel="icon" type="image/png" href="images/orenlogo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">        <!-- global -->
+  <link rel="stylesheet" href="indstyle.css">     <!-- automotive page only -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="industry as">
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Perfect Metal Industries logo" />
+        <span class="brand-text">
+          PERFECT METAL INDUSTRIES (M) SDN. BHD.
+        </span>
+      </a>
+
+      <!-- Hamburger -->
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="product.html">Products</a></li>
+          
+          <li class="dropdown">
+            <a href="#">Industries We Serve ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="automotive.html">Automotive</a></li>
+              <li><a href="electrical.html">Electrical</a></li>
+              <li><a href="furniture.html">Furniture</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html">About Us</a></li>
+          <li><a class="btn btn--small btn--outline" href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    navToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('active');
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="as-hero hero">
+    <div class="hero-content">
+    </div>
+  </section>
+
+  <!-- Industry Overview -->
+  <section class="as-overview overview">
+    <div class="containers">
+      <h2>Automotive</h2>
+      <p>In the automotive world, every connection matters, from critical safety systems to sleek interior finishes. At Perfect Metal, 
+        we supply high-precision fasteners engineered for strength, reliability, and consistency, supporting both performance and safety, mile after mile.</p>
+    </div>
+  </section>
+
+    <!-- Industry Overview -->
+  <section class="as-wim overview">
+    <div class="containers">
+      <h2>Why It Matters</h2>
+      <p>Automotive components face intense vibrational stress, thermal cycles, and harsh environmental exposure. A reliable fastener ensures structural integrity, enhances passenger safety, and meets the rigorous standards of OEMs and Tier-1 suppliers.</p>
+    </div>
+  </section>
+
+  <!-- Challenges -->
+  <section class="as-challenges challenges">
+    <div class="containers">
+      <h2>Challenges in the Industry</h2>
+      <ul>
+        <li> 🔩 Constant vibration loosens fasteners</li>
+        <li> 🔩 Exposure to heat, oil, and moisture</li>
+        <li> 🔩 Need for lightweight yet secure fastening</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="as-solutions solutions">
+    <div class="containers">
+      <h2>Our Screw Solutions</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Vibration Resistance</h3>
+          <p>Screws designed to stay secure under dynamic loads.</p>
+        </div>
+        <div class="card">
+          <h3>Corrosion Protection</h3>
+          <p>Heat and corrosion-resistant finishes like zinc and stainless steel.</p>
+        </div>
+        <div class="card">
+          <h3>OEM Precision</h3>
+          <p>Manufactured to strict tolerances for automotive applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications -->
+  <section class="as-applications applications">
+    <div class="containers">
+      <h2>Applications</h2>
+      <div class="grid">
+        <div class="app">🚗 Engine Assemblies</div>
+        <div class="app">🛠 Chassis & Body Panels</div>
+        <div class="app">🎛 Dashboards & Trim</div>
+        <div class="app">🔌 Electrical Systems</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="as-why why">
+    <div class="containers">
+      <h2>Why Choose Perfect Metal</h2>
+      <div class="grid">
+        <div class="card">✅ ISO-Compliant Manufacturing</div>
+        <div class="card">✅ Custom Screw Designs</div>
+        <div class="card">✅ Proven Industry Experience</div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== Industries We Serve ===== -->
+<section class="industries" id="industries" aria-label="Industries we serve">
+  <div class="container">
+    <h2>Industries we serve</h2>
+
+    <div class="cards">
+      <!-- Card 1 -->
+      <a class="card" href="automotive.html" aria-label="Automotive">
+        <div class="card-media" style="background-image:url('images/Automotive Image.jpg');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-title">Automotive</div>
+      </a>
+
+      <!-- Card 2 -->
+      <a class="card" href="electrical.html" aria-label="Electrical">
+        <div class="card-media" style="background-image:url('images/Electrical Image.jpg');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-title">Electrical</div>
+      </a>
+
+      <!-- Card 3 -->
+      <a class="card" href="furniture.html" aria-label="Furniture">
+        <div class="card-media" style="background-image:url('images/Furniture Image.jpg');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-title">Furniture</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+    
+
+    <!-- ===== Contact / Get in touch ===== -->
+    <section class="contact" id="contact" aria-label="Get in touch">
+      <div class="container contact-grid">
+        <div class="contact-form">
+          <h2>Get in touch</h2>
+
+          <!-- Static form; add backend later if needed -->
+          <form action="https://formsubmit.co/sales.perfectm@gmail.com" method="POST" enctype="multipart/form-data">
+            <div class="row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Full name" required>
+              </label>
+
+              <label>
+                <span>Contact number</span>
+                <input type="tel" name="phone" placeholder="+60…" required>
+              </label>
+
+              <label>
+                <span>Email address</span>
+                <input type="email" name="email" placeholder="you@company.com" required>
+              </label>
+
+              <label>
+                <span>Industry</span>
+                <input type="text" name="industry" placeholder="e.g. Automotive">
+              </label>
+
+              <label>
+                <span>Company name</span>
+                <input type="text" name="company" placeholder="Company Sdn. Bhd.">
+              </label>
+            </div>
+
+            <label class="full">
+              <span>Interested products</span>
+              <textarea name="message" rows="4" placeholder="Samples / specifications / requirements"></textarea>
+            </label>
+
+            <!-- File Upload -->
+            <label class="full">
+              <span>Upload drawing / reference image</span>
+              <input type="file" name="attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+            </label>
+
+            <!-- Hidden Config for FormSubmit -->
+            <input type="hidden" name="_subject" value="New Product Information Request">
+            <input type="hidden" name="_cc" value="sales.perfectm@gmail.com">
+            <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Perfect Metal Industries. We have received your request and will review your details. Our team will get back to you shortly.">
+            <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <button type="submit" class="btn btn--light">Submit</button>
+          </form>
+        </div>
+
+      <aside class="contact-info">
+        <div class="info-block">
+          <h3>Where we are</h3>
+          <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/dir//Perfect+Metal+Industrial+(M)+Sdn+Bhd,+Balakong,+1,+Jalan+Taming+P%2F1,+Taman+Taming+Jaya,+43300+Seri+Kembangan,+Selangor/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x31cdcac8cdd270ef:0x287df40c2ed64a85?sa=X&ved=1t:57443&ictx=111" target="_blank">Balakong, 1, Jalan Taming P/1, Taman Taming Jaya, 43300 Seri Kembangan, Selangor</a></p>
+        </div>
+
+        <div class="info-block">
+          <h3>Reach us</h3>
+          <p><i class="fas fa-phone"></i> <a class="phone" href="tel:+6038961278">+60 3 8961 2787</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales.perfectm@gmail.com&su=SUBJECT&body=BODY&cc=sales.perfectm@gmail.com" target="_blank">sales.perfectm@gmail.com</a></p>
+        </div>
+
+        <div class="social">
+          <a href="https://www.facebook.com/p/Perfect-Metal-Industrial-100063540762149/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/126681709?text=I" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales.perfectm@gmail.com&su=SUBJECT&body=BODY&cc=sales.perfectm@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+        </div>
+      </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container">
+      <p>Copyright © 2025 Perfect Metal Industries (M) Sdn. Bhd. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
