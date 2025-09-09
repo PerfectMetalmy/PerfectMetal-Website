@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfect Metal Industries</title>
+  <link rel="icon" type="image/png" href="images/orenlogo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="Perfect Metal Industries logo" />
+      <span class="brand-text">
+        PERFECT METAL INDUSTRIES (M) SDN. BHD.
+      </span>
+    </a>
+
+    <!-- Hamburger (always visible on mobile) -->
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <!-- Navigation -->
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="product.html">Products</a></li>
+       
+        <li class="dropdown">
+          <a href="#">Industries We Serve ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="automotive.html">Automotive</a></li>
+            <li><a href="electrical.html">Electrical</a></li>
+            <li><a href="furniture.html">Furniture</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html">About Us</a></li>
+        <li><a class="btn btn--small btn--outline" href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  navToggle.addEventListener('click', () => {
+    siteNav.classList.toggle('active');
+  });
+</script>
+
+
+    <main id="main">
+  <!-- ===== Hero (About Page) ===== -->
+  <section class="hero hero-about">
+    <div class="container">
+      <span class="eyebrow">About Us</span>
+      <h1>
+        We are <span class="highlight">Perfect Metal</span>.<br />
+        A fastener manufacturer company.
+      </h1>
+
+      <p class="hero-sub">
+        We help our clients build with confidence, delivering fastening solutions
+        with quality and precision trusted across industries worldwide. Our commitment 
+        to excellence ensures that every product we create meets international standards and fulfills the needs of our diverse clients.
+      </p>
+
+      <!-- Numbers with animation -->
+      <div class="stats">
+        <div class="stat">
+          <span class="count" data-target="30">0</span>+
+          <p>years in the business</p>
+        </div>
+        <div class="stat">
+          <span class="count" data-target="50">0</span>+
+          <p>industries served</p>
+        </div>
+        <div class="stat">
+          <span class="count" data-target="1000">0</span>+
+          <p>successful projects</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Count Up Animation Script -->
+<script>
+  const counters = document.querySelectorAll('.count');
+  const speed = 100; // smaller = faster
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 40);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  // Trigger when in view
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.disconnect(); // run once
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('.stats'));
+</script>
+
+<div class="hero-spacer"></div>
+
+<!-- ===== Our Mission Block ===== -->
+<div class="mission-wrapper">
+  <section class="mission">
+    <div class="mission-inner">
+      <span class="eyebrow">Our Mission</span>
+      <h2>
+        We believe in strength through precision.
+      </h2>
+      <p class="mission-sub">
+        At Perfect Metal, our mission is simple, to deliver dependable fastening 
+        solutions that empower businesses to build stronger, safer, and more efficient products.
+        By combining innovation, experience, and dedication, we help our clients achieve success
+        bolt by bolt, screw by screw.
+      </p>
+    </div>
+  </section>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const mission = document.querySelector(".mission");
+  const wrapper = document.querySelector(".mission-wrapper");
+
+  window.addEventListener("scroll", () => {
+    const rect = wrapper.getBoundingClientRect();
+
+    // When wrapper enters viewport, start zoom
+    if (rect.top <= 0) {
+  // Once scrolled past top → zoom in
+  mission.classList.add("zoom");
+}
+
+if (wrapper.getBoundingClientRect().top > 0) {
+  // When scrolling back into hero → zoom out
+  mission.classList.remove("zoom");
+}
+
+  });
+});
+</script>
+
+
+<!-- Section 3 Placeholder -->
+<!-- ===== Company Journey (Section 3) ===== -->
+<section class="journey">
+  <div class="journey-inner">
+    <div class="container"> 
+      <span class="eyebrow">Our Story</span>
+    
+      <div class="caliper-container">
+        <img src="images/caliper-base.png" alt="Caliper Base" class="caliper-base">
+        <img src="images/caliper-handle.png" alt="Caliper Handle" id="caliperHandle" class="caliper-handle">
+      </div>
+
+      <div class="story-wrapper" id="storyWrapper"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ----- Build stories ----- */
+const history = [
+  { year: "1993", text: "Founded in Malaysia.", img: "./images/h1.png" },
+  { year: "2000", text: "Expanded factory operations.", img: "./images/h2.jpg"},
+  { year: "2011", text: "Oversea visit.", img: "./images/h3.jpg" },
+  { year: "Today", text: "Looking ahead.", img: "./images/h6.png" }
+];
+
+const wrapper = document.getElementById("storyWrapper");
+history.forEach((item, i) => {
+  const div = document.createElement("div");
+  div.className = "story" + (i === 0 ? " active" : "");
+  div.innerHTML = `
+      <div class="story-year">${item.year}</div>
+      <div class="story-text">${item.text}</div>
+    `;
+  div.dataset.bg = item.img; // store background image path
+
+  wrapper.appendChild(div);
+});
+
+/* ----- Elements ----- */
+const journey = document.querySelector(".journey");
+const handle = document.getElementById("caliperHandle");
+const base = document.querySelector(".caliper-base");
+const stories = document.querySelectorAll(".story");
+
+/* ----- Config: virtual 800px design space ----- */
+const DESIGN_WIDTH = 800;
+const VIRTUAL_MIN = -40;   // 1980
+const VIRTUAL_MAX = 600;   // 2020
+
+let currentIndex = 0;
+let dragging = false;
+
+/* Convert design X → real pixels */
+function virtualToReal(x) {
+  const baseWidth = base.clientWidth || DESIGN_WIDTH;
+  return (x / DESIGN_WIDTH) * baseWidth;
+}
+
+/* Set handle position */
+function setHandleVirtual(x) {
+  const clamped = Math.max(VIRTUAL_MIN, Math.min(x, VIRTUAL_MAX));
+  handle.style.left = virtualToReal(clamped) + "px";
+  return clamped;
+}
+
+/* Smooth cross-fade between stories */
+function updateStoryFromX(x) {
+  const spacing = (VIRTUAL_MAX - VIRTUAL_MIN) / (history.length - 1);
+
+  let index = Math.floor((x - VIRTUAL_MIN) / spacing);
+  index = Math.max(0, Math.min(index, history.length - 2));
+
+  const startX = VIRTUAL_MIN + index * spacing;
+  const endX = startX + spacing;
+  const p = (x - startX) / (endX - startX); // 0 → 1
+
+  // fade current and next story text
+  stories.forEach((story) => {
+    story.style.opacity = 0;
+    story.style.zIndex = 1;
+  });
+
+  stories[index].style.opacity = 1 - p;
+  stories[index].style.zIndex = 2;
+
+  stories[index + 1].style.opacity = p;
+  stories[index + 1].style.zIndex = 2;
+
+  // 🔥 update section background instead of showing image below
+  const bg1 = stories[index].dataset.bg;
+  const bg2 = stories[index + 1].dataset.bg;
+
+  const journeyInner = journey.querySelector(".journey-inner");
+  journeyInner.style.backgroundImage =
+    `linear-gradient(rgba(10,31,68,0.7), rgba(10,31,68,0.7)), url(${p < 0.5 ? bg1 : bg2})`;
+  journeyInner.style.backgroundSize = "cover";
+  journeyInner.style.backgroundPosition = "center";
+  journeyInner.style.transition = "background-image 0.5s ease-in-out";
+}
+
+/* Scroll-driven */
+function onScroll() {
+  const rect = journey.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const totalScroll = journey.offsetHeight - windowHeight;
+  const scrolled = windowHeight - rect.top;
+
+  // ===== Adjust here =====
+  const offsetStart = 200; // px delay before caliper starts
+  const offsetEnd = 200;   // px before section bottom to stop
+  const adjustedTotal = totalScroll - offsetEnd;
+  // =======================
+
+  let progress = 0;
+  if (rect.top <= -offsetStart && scrolled <= adjustedTotal) {
+    progress = (scrolled - offsetStart) / adjustedTotal;
+  } else if (scrolled > adjustedTotal) {
+    progress = 1;
+  }
+
+  // clamp between 0–1
+  progress = Math.max(0, Math.min(1, progress));
+
+  const virtualX = VIRTUAL_MIN + (VIRTUAL_MAX - VIRTUAL_MIN) * progress;
+  const clamped = setHandleVirtual(virtualX);
+  updateStoryFromX(clamped);
+}
+
+
+/* Dragging */
+handle.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+  dragging = true;
+});
+window.addEventListener("mousemove", (e) => {
+  if (!dragging) return;
+  const rect = base.getBoundingClientRect();
+  const relX = e.clientX - rect.left;
+  const scale = (base.clientWidth || DESIGN_WIDTH) / DESIGN_WIDTH;
+  const virtualX = relX / scale;
+  const clamped = setHandleVirtual(virtualX);
+  updateStoryFromX(clamped);
+});
+window.addEventListener("mouseup", () => (dragging = false));
+
+/* Init */
+function initJourney() {
+  setHandleVirtual(VIRTUAL_MIN);
+  updateStoryFromX(VIRTUAL_MIN);
+  onScroll();
+}
+
+window.addEventListener("scroll", onScroll);
+window.addEventListener("resize", () => {
+  const virtualX = VIRTUAL_MIN + (VIRTUAL_MAX - VIRTUAL_MIN) * (currentIndex / (history.length - 1));
+  setHandleVirtual(virtualX);
+});
+document.addEventListener("DOMContentLoaded", initJourney);
+</script>
+
+
+
+<!-- Section 4 Placeholder -->
+ <div class="section-4">
+    <section class="industries" id="industries" aria-label="Industries we serve">
+      <div class="container">
+        <h2>Industries we serve</h2>
+
+        <div class="cards">
+          <!-- Card 1 -->
+          <a class="card" href="automotive.html" aria-label="Automotive">
+            <div class="card-media" style="background-image:url('images/Automotive\ Image.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Automotive</div>
+          </a>
+
+          <!-- Card 2 -->
+          <a class="card" href="electrical.html" aria-label="Electrical">
+            <div class="card-media" style="background-image:url('images/Electrical\ Image.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Electrical</div>
+          </a>
+
+          <!-- Card 3 -->
+          <a class="card" href="furniture.html" aria-label="Furniture">
+            <div class="card-media" style="background-image:url('images/Furniture\ Image.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Furniture</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="lookthrough"></div>
+
+
+
+    <!-- ===== Contact / Get in touch ===== -->
+    <section class="contact" id="contact" aria-label="Get in touch">
+      <div class="container contact-grid">
+        <div class="contact-form">
+          <h2>Get in touch</h2>
+
+          <!-- Static form; add backend later if needed -->
+          <form action="https://formsubmit.co/sales.perfectm@gmail.com" method="POST" enctype="multipart/form-data">
+            <div class="row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Full name" required>
+              </label>
+
+              <label>
+                <span>Contact number</span>
+                <input type="tel" name="phone" placeholder="+60…" required>
+              </label>
+
+              <label>
+                <span>Email address</span>
+                <input type="email" name="email" placeholder="you@company.com" required>
+              </label>
+
+              <label>
+                <span>Industry</span>
+                <input type="text" name="industry" placeholder="e.g. Automotive">
+              </label>
+
+              <label>
+                <span>Company name</span>
+                <input type="text" name="company" placeholder="Company Sdn. Bhd.">
+              </label>
+            </div>
+
+            <label class="full">
+              <span>Interested products</span>
+              <textarea name="message" rows="4" placeholder="Samples / specifications / requirements"></textarea>
+            </label>
+
+            <!-- File Upload -->
+            <label class="full">
+              <span>Upload drawing / reference image</span>
+              <input type="file" name="attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+            </label>
+
+            <!-- Hidden Config for FormSubmit -->
+            <input type="hidden" name="_subject" value="New Product Information Request">
+            <input type="hidden" name="_cc" value="sales.perfectm@gmail.com">
+            <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Perfect Metal Industries. We have received your request and will review your details. Our team will get back to you shortly.">
+            <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <button type="submit" class="btn btn--light">Submit</button>
+          </form>
+
+        </div>
+
+      <aside class="contact-info">
+        <div class="info-block">
+          <h3>Where we are</h3>
+          <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/dir//Perfect+Metal+Industrial+(M)+Sdn+Bhd,+Balakong,+1,+Jalan+Taming+P%2F1,+Taman+Taming+Jaya,+43300+Seri+Kembangan,+Selangor/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x31cdcac8cdd270ef:0x287df40c2ed64a85?sa=X&ved=1t:57443&ictx=111" target="_blank">Balakong, 1, Jalan Taming P/1, Taman Taming Jaya, 43300 Seri Kembangan, Selangor</a></p>
+        </div>
+
+        <div class="info-block">
+          <h3>Reach us</h3>
+          <p><i class="fas fa-phone"></i> <a class="phone" href="tel:+6038961278">+60 3 8961 2787</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales.perfectm@gmail.com&su=SUBJECT&body=BODY&cc=sales.perfectm@gmail.com" target="_blank">sales.perfectm@gmail.com</a></p>
+        </div>
+
+        <div class="social">
+          <a href="https://www.facebook.com/p/Perfect-Metal-Industrial-100063540762149/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/126088126?text=Hi, I’m interested in your screw solutions. Can you provide more details?" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales.perfectm@gmail.com&su=Product%20Information%20Request&body=Dear%20Customer,%0A%0APlease%20complete%20the%20form%20below%20with%20your%20requirements%20so%20that%20we%20can%20provide%20you%20with%20accurate%20product%20details:%0A%0AProduct%20Information%20Request%20Form%0A%0ACompany%20Name:%0APerson-in-Charge:%0AContact%20Number:%0AIndustry:%0AInterested%20Products:%0ASpecifications%20/%20Requirements%20(e.g.,%20size,%20material,%20finish):%0AQuantity%20Needed:%0AEstimated%20Price%20per%20pcs%20(if%20available):%0A%0AWe%20are%20able%20to%20produce%20according%20to%20customers%E2%80%99%20incoming%20drawings.%20You%20may%20also%20send%20us%20your%20samples%20or%20technical%20drawings,%20and%20we%20will%20be%20glad%20to%20assist%20you%20further.%0A%0AThank%20you%20and%20we%20look%20forward%20to%20your%20reply.%0A%0ABest%20regards,%0A[Your%20Name]%0A[Your%20Position]%0A[Your%20Company]" 
+            target="_blank" 
+            aria-label="Gmail">
+            <i class="fas fa-envelope"></i>
+          </a>
+
+
+
+
+        </div>
+      </aside>
+      </div>
+    </section>
+
+  </main>
+
+
+</body>
+</html>

@@ -276,3 +276,464 @@ form .full{ grid-column:1/-1; margin-top:.3em }
 
 .content-layout { display: flex; align-items: flex-start; }
 
+
+
+/* ===============================
+   About Page Styles
+   =============================== */
+
+/* ===== About Page Hero Variant ===== */
+.hero-about {
+  position: fixed;   /* stays fixed as background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;     /* full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: #fff;
+  overflow: hidden;
+  padding-right: 4rem;
+  z-index: 1;        /* behind mission */
+}
+
+
+.hero-about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/about-hero.jpg"); /* ✅ replace with your about header image */
+  background-size: cover;
+  background-attachment: fixed; /* keeps image still while scrolling */
+  background-position: center;
+  opacity: 0.45;                /* overlay effect */
+}
+
+.hero-about .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;           /* breathing space inside */
+}
+
+.hero-inner-about {
+  max-width: 650px;
+}
+
+.hero-inner-about h1 {
+  margin-bottom: 3rem;                /* more gap under heading */
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.25;                  /* taller heading lines */
+}
+
+.hero-inner-about .hero-sub {
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  margin-bottom: 3rem;                /* more gap below paragraph */
+  line-height: 1.8;                   /* better readability */
+}
+.hero-spacer {
+  height: 100vh; /* gives scroll room equal to hero height */
+}
+
+span.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 3.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 5rem;                          /* more space between numbers */
+  flex-wrap: wrap;
+  margin-top: 3rem;                   /* push stats down further */
+}
+
+.stat {
+  font-weight: 700;
+  font-size: 3rem;                    /* slightly bigger for impact */
+  color: #fff;
+}
+
+.stat p {
+  margin: 0.75rem 0 0;                /* gap between number & label */
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #cbd5e1;
+}
+
+.hero-about .eyebrow {
+  color: var(--orange) !important;
+}
+
+
+
+/* Mission Section Wrapper */
+
+/* Wrapper: gives enough scroll space */
+.mission-wrapper {
+  position: relative;
+  height: 200vh; /* enough space for rise + zoom */
+  z-index: 5;
+}
+
+
+/* Orange block */
+.mission {
+  position: sticky;
+  top: 50%;   /* starts entering from bottom */
+  transform: translateY(50%); /* visually starts lower */
+  background: var(--orange);
+  color: #fff;
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 50vh;
+  transition: all 1.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+
+/* Inner content */
+.mission-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Zoom state */
+.mission.zoom {
+  border-radius: 0;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  transform: scale(1.05);
+  
+}
+
+
+.mission .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1rem;
+  color: #0A1F44;
+}
+
+.mission h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mission-sub {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Zoom effect */
+.mission.zoom {
+  border-radius: 0;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  transform: scale(1.05);
+}
+
+.placeholder {
+  padding: 6rem 2rem;
+  background: #f6f8fb;   /* light gray so you see it’s not orange */
+}
+
+.contact, .site-footer, .placeholder {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* ===== Journey Section ===== */
+.journey {
+  position: relative;
+  height: 400vh; /* enough scroll space for the timeline */
+  z-index: 5;
+}
+/* ===== fade start ===== */
+.journey-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.bg1 { opacity: 1; } /* start visible */
+.journey .container {
+  position: relative;
+  z-index: 2; /* keep text on top */
+}
+/* ===== fade end ===== */
+
+.journey-inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;           /* always fill screen */
+  background: var(--navy); /* navy background */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.journey .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.journey .eyebrow {
+  color: var(--orange);
+  margin-top: 95px;
+}
+
+.caliper-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: -50px;
+}
+
+.caliper-base {
+  max-width: 800px;
+  width: 100%;
+}
+
+.caliper-handle {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  cursor: grab;
+  transition: left 0.1s ease-out;
+}
+
+.story-wrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 350px;
+  top: 50px; /* starting offset from caliper */
+  transition: top 0.2s linear;
+}
+
+
+.story {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.story.active {
+  opacity: 1;
+}
+
+.story-year {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+.story-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.section-4 {
+  position: relative;
+  z-index: 10;
+}
+
+.mission-wrapper, .journey { overflow: visible; }
+
+.lookthrough {
+  height: 60px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(1px);
+  background: linear-gradient(
+    to right,
+    rgba(10,31,68,1) 0%,       /* navy left */
+    rgba(10,31,68,0) 40%,      /* transparent middle */
+    rgba(10,31,68,1) 100%      /* navy right */
+  );
+  padding-top: 10px;
+}
+
+
+.highlight {
+  color: #fc700d; /* your brand orange */
+}
+
+/* ===============================
+   About Us (Mobile Responsive)
+   =============================== */
+@media (max-width: 768px) {
+  .hero.hero-about {
+    padding: 80px 20px 60px; /* reduce top/bottom padding */
+    text-align: center;
+  }
+
+  .hero.hero-about h1 {
+    font-size: 1.8rem;   /* shrink heading */
+    line-height: 1.3;
+    word-break: break-word; /* prevent overflow */
+  }
+
+  .hero.hero-about .hero-sub {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 15px;
+  }
+
+  .hero.hero-about .stats {
+    flex-direction: column; /* stack stats vertically */
+    gap: 20px;
+  }
+
+  .hero.hero-about .stat {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero.hero-about h1 {
+    font-size: 1.5rem;  /* even smaller on very small screens */
+  }
+
+  .hero.hero-about .hero-sub {
+    font-size: 0.9rem;
+  }
+}
+
+/* Match About Us H1 to Mission H2 on mobile */
+@media (max-width: 768px) {
+  .hero.hero-about h1,
+  .mission h2 {
+    font-size: 2rem;   /* same size */
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+
+/* Add top space only on mobile so nav doesn't block text */
+@media (max-width: 768px) {
+  .hero.hero-about {
+    padding-top: 450px; /* adjust until text is fully visible */
+  }
+}
+
+/* ---- Mobile-only overscroll fix ---- */
+@media (max-width: 768px) {
+  html, body {
+    overscroll-behavior: contain; /* ✅ block background layer bounce */
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overscroll-behavior: none;
+    position: relative; /* stabilize viewport */
+    height: auto;
+  }
+}
+
+
+/* ===== Dropdown Menu ===== */
+.nav-list .dropdown {
+  position: relative;
+}
+
+.nav-list .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.nav-list .dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.nav-list .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.nav-list .dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-list .dropdown-menu a:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* Show dropdown on hover */
+.nav-list .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ===== Mobile Friendly ===== */
+@media (max-width: 768px) {
+  .nav-list .dropdown-menu {
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .nav-list .dropdown-menu a {
+    padding: 0.5rem 1rem;
+    color: #fff; /* matches your mobile nav */
+  }
+
+  .nav-list .dropdown-menu a:hover {
+    background: none;
+    color: var(--orange);
+  }
+}
+

@@ -1,0 +1,112 @@
+
+
+/* Containers */
+.containers {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem 20px;
+}
+
+/* Hero Section */
+.hero {
+  color: #fff;
+  text-align: center;
+  padding: 15rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.as-hero {
+  background: url("images/Automotive Image.jpg") no-repeat center center/cover;
+}
+
+.es-hero {
+  background: url("images/Electrical\ Image.jpg") no-repeat center center/cover;
+}
+
+.fs-hero {
+  background: url("images/Furniture\ Image.jpg") no-repeat center center/cover;
+}
+
+.as-overview .containers {
+  margin-top: 50px;
+}
+ 
+ul { list-style: none; padding: 0; }
+ul li { margin: 0.5rem 0; }
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.solutions .grid, .applications .grid, .why .grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card, .app {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* CTA */
+.cta {
+  background: #0A1F44;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* ===== Industries ===== */
+.industries{ background:var(--navy); color:#fff; padding:clamp(2.2rem,6vw,4rem) 0; }
+.industries h2{ margin-bottom:1.25rem }
+.cards{ display:grid; grid-template-columns: repeat(3, 1fr); gap:2.2rem; }
+.card{ position:relative; overflow:hidden; border-radius:16px; display:block; box-shadow:var(--shadow); isolation:isolate; }
+.card-media{ padding-top:68%; background-size:cover; background-position:center; filter:saturate(1.05) contrast(1.05); transform:scale(1.01); transition:transform .25s ease; }
+.card-overlay{ position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.1)); opacity:.9; transition:opacity .25s ease; }
+.card-title{ position:absolute; left:1rem; bottom:.9rem; font-weight:700; letter-spacing:.02em; font-size: large; }
+.card:hover .card-media{ transform:scale(1.05) }
+.card:hover .card-overlay{ opacity:1 }
+
+.as-why .card{ margin-bottom: 50px; }
+
+/* Keep these only for solution/why/application cards */
+.solutions .card,
+.why .card,
+.app {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Industries cards shouldn’t get the gray box */
+.industries .card {
+  background: none;
+  padding: 0;
+  border-radius: 16px;
+}
+
+/* Unified Card Style */
+.card, .app {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 12px; /* slightly rounder for modern feel */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* subtle depth */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover, .app:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.cta {
+  padding: 2rem 1rem 1rem; /* top right/left bottom */
+}
+
